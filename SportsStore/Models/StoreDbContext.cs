@@ -6,6 +6,6 @@ namespace SportsStore.Models
     {
         public StoreDbContext(DbContextOptions<StoreDbContext> options) : base(options) { }
 
-        public DbSet<Product> Product => Set<Product>();
+        public DbSet<Product> Products => Set<Product>();
     }
 }
