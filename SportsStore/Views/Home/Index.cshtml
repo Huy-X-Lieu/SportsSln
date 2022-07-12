@@ -1,1 +1,11 @@
-﻿<h4>Welcome to SportsStore</h4>
+﻿@using System.Collections;
+@model IQueryable<Product>
+
+@foreach(Product prod in @Model ?? Enumerable.Empty<Product>()){
+    <div>
+        <h3>@prod.Name</h3>
+        @prod.Description
+        <h4>@prod.Price.ToString("C")</h4>
+    </div>
+
+}

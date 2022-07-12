@@ -80,6 +80,7 @@ namespace SportsStore.Models
                     }
                 );
                 context.SaveChanges();
+            }
         }
     }
 }
