@@ -13,7 +13,7 @@ namespace SportsStore.Controllers
         }
 
         public ViewResult Index(int productPage = 1) => View(_repository.Products
-            .OrderBy(p => p.productID)
+            .OrderBy(p => p.ProductID)
             .Skip((productPage - 1) * PageSize)
             .Take(PageSize));
     }

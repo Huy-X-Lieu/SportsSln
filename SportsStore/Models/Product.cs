@@ -4,7 +4,7 @@ namespace SportsStore.Models
 {
     public class Product
     {
-        public long? productID { get; set; }
+        public long? ProductID { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 

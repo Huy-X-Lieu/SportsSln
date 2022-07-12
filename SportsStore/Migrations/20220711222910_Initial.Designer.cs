@@ -26,11 +26,11 @@ namespace SportsStore.Migrations
 
             modelBuilder.Entity("SportsStore.Models.Product", b =>
                 {
-                    b.Property<long?>("productID")
+                    b.Property<long?>("ProductID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("productID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("ProductID"), 1L, 1);
 
                     b.Property<string>("Category")
                         .IsRequired()
@@ -47,7 +47,7 @@ namespace SportsStore.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(8,2)");
 
-                    b.HasKey("productID");
+                    b.HasKey("ProductID");
 
                     b.ToTable("Products");
                 });
