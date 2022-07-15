@@ -14,6 +14,9 @@ builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.MapControllerRoute("pagination",
+    "Product/Page{productPage}",
+    new {Controller = "Home", action = "Index"});
 app.MapDefaultControllerRoute();
 SeedData.Ensurepopulated(app);
 app.Run();
