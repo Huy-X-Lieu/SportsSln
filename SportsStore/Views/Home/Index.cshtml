@@ -1,12 +1,20 @@
 ﻿@model ProductsListViewModels
 
 @foreach(var prod in @Model?.Products ?? Enumerable.Empty<Product>()){
-    <div>
-        <h3>@prod.Name</h3>
-        @prod.Description
-        <h4>@prod.Price.ToString("C")</h4>
+    <div class="card card-outline-primary m-1 p-1">
+        <div class="bg-faded p-1">
+            <h4>@prod.Name
+                <span class="badge rounded-pill bg-primary text-white" style="float:right">
+                    <small>@prod.Price.ToString("C")</small>
+                </span>
+            </h4>
+        </div>
+        <div class="card-text p-1">@prod.Description</div>
     </div>
 
 }
 
-<div page-model="@Model?.PagingInfo" page-action="Index"></div>
+<div page-model="@Model?.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>
