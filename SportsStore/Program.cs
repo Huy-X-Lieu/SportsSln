@@ -10,10 +10,14 @@ builder.Services.AddDbContext<StoreDbContext>(opts =>
         builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
 });
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
+builder.Services.AddRazorPages();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
 app.UseStaticFiles();
+app.UseSession();
 
 // Routing
 app.MapControllerRoute("catpage",
@@ -33,5 +37,6 @@ app.MapControllerRoute("pagination",
     new {Controller = "Home", action = "Index", productPage = 1});
 //End Routing
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 SeedData.Ensurepopulated(app);
 app.Run();
