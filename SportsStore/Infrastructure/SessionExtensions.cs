@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-
 namespace SportsStore.Infrastructure
 {
     public static class SessionExtensions
@@ -8,7 +7,6 @@ namespace SportsStore.Infrastructure
         {
             session.SetString(key, JsonSerializer.Serialize(value));
         }
-
         public static T? GetJson<T>(this ISession session, string key)
         {
             var sessionData = session.GetString(key);
