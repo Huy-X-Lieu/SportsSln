@@ -20,10 +20,10 @@
         }
 
         public virtual void RemoveLine(Product product) =>
-            Lines.RemoveAll(l => l.Product.ProductID == product.ProductID);
+            Lines.RemoveAll(line => line.Product.ProductID == product.ProductID);
 
         public decimal ComputeTotalValue() =>
-            Lines.Sum(e => e.Product.Price * e.Quantity);
+            Lines.Sum(item => item.Product.Price * item.Quantity);
 
         public virtual void Clear() => Lines.Clear();
     }
@@ -34,3 +34,4 @@
         public int Quantity { get; set; }
     }
 }
+
